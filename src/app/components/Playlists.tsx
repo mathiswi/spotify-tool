@@ -9,10 +9,18 @@ export async function Playlists() {
   const playlists: Playlist[] = await getPlaylistsForCurrentUser();
 
   return (
-    <DataTable value={playlists} tableStyle={{ minWidth: "50rem" }}>
-      <Column header="Image" body={ImageColumn}></Column>
-      <Column field="name" header="Name" sortable></Column>
-      <Column field="tracks.total" header="Tracks" sortable></Column>
-    </DataTable>
+    <div>
+      <DataTable
+        value={playlists}
+        scrollable
+        // TODO: make flex
+        scrollHeight="82vh"
+        tableStyle={{ minWidth: "50rem" }}
+      >
+        <Column header="Image" body={ImageColumn}></Column>
+        <Column field="name" header="Name" sortable></Column>
+        <Column field="tracks.total" header="Tracks" sortable></Column>
+      </DataTable>
+    </div>
   );
 }

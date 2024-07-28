@@ -8,3 +8,11 @@ declare module "next-auth" {
     token: JWT;
   }
 }
+
+declare module "next-auth/jwt" {
+  interface JWT extends NextAuthJWT {
+    accessToken?: string;
+    refreshToken?: string;
+    accessTokenExpires?: number;
+  }
+}

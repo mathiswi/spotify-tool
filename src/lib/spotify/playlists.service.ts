@@ -7,6 +7,5 @@ export async function getPlaylistsForCurrentUser(): Promise<Playlist[]> {
     const nextRes: PlaylistResponse = await customRawGet(res.next);
     res.items.push(...nextRes.items);
   }
-
   return res.items;
 }
